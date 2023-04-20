@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.h1{
+  color: aqua;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+}
+.App{
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title2{
+  color: darkblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

@@ -24,8 +24,8 @@ const Posts = () => {
     <div>
       {posts?.map((post) => (
         <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
+          <h2 className='title2'>{post.title}</h2>
+          <p className='body'>{post.body}</p>
         </div>
       ))}
     </div>

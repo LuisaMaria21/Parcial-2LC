@@ -1,30 +1,30 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchPosts } from 'https://jsonplaceholder.typicode.com/posts';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts } from './redux/actions';
 
-
-
-export const usePosts = () => {
+const Posts = () => {
   const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts);
+  const loading = useSelector((state) => state.loading);
+  const error = useSelector((state) => state.error);
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
 
-  return useSelector((state) => state.posts.posts);
-};
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-// Componente que muestra la lista de posts
-const Posts = () => {
-  const posts = usePosts();
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div>
-      <h1>Parcial 2</h1>
-      <h2>Posts</h2>
       {posts.map((post) => (
         <div key={post.id}>
-          <h3>{post.title}</h3>
+          <h2>{post.title}</h2>
           <p>{post.body}</p>
         </div>
       ))}

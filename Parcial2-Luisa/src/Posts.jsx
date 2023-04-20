@@ -4,7 +4,7 @@ import { fetchPosts } from './redux/actions';
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts);
+  const {posts} = useSelector((state) => state.posts);
   const loading = useSelector((state) => state.loading);
   const error = useSelector((state) => state.error);
 

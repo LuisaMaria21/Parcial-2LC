@@ -10,7 +10,7 @@ const Posts = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-  }, [dispatch]);
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -22,7 +22,7 @@ const Posts = () => {
 
   return (
     <div>
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <div key={post.id}>
           <h2>{post.title}</h2>
           <p>{post.body}</p>

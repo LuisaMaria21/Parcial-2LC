@@ -23,9 +23,9 @@ const Posts = () => {
   return (
     <div>
       {posts?.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className='card-mb-2'>
           <h2 className='title2'>{post.title}</h2>
-          <p className='body'>{post.body}</p>
+          <p className='parrafo'>{post.body}</p>
         </div>
       ))}
     </div>
